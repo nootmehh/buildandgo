@@ -73,18 +73,24 @@ export default function Home() {
         <ScrollAnimate animationClass="animate-fade-in-up" delayClass="animation-delay-100">
           <HeroSection />
         </ScrollAnimate>
-        <ScrollAnimate animationClass="animate-fade-in-up">
-          <FeaturesSection />
-        </ScrollAnimate>
+        <div id="features" className="scroll-mt-24">
+          <ScrollAnimate animationClass="animate-fade-in-up">
+            <FeaturesSection />
+          </ScrollAnimate>
+        </div>
         <ScrollAnimate animationClass="animate-fade-in-up">
           <AISection />
         </ScrollAnimate>
-        <ScrollAnimate animationClass="animate-fade-in-up">
-          <TestimonialSection />
-        </ScrollAnimate>
-        <ScrollAnimate animationClass="animate-fade-in-up">
-          <PricingSection />
-        </ScrollAnimate>
+        <div id="testimonials" className="scroll-mt-24">
+          <ScrollAnimate animationClass="animate-fade-in-up">
+            <TestimonialSection />
+          </ScrollAnimate>
+        </div>
+        <div id="pricing" className="scroll-mt-24">
+          <ScrollAnimate animationClass="animate-fade-in-up">
+            <PricingSection />
+          </ScrollAnimate>
+        </div>
         <ScrollAnimate animationClass="animate-fade-in-up">
           <ReminderSection />
         </ScrollAnimate>
