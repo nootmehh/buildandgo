@@ -11,6 +11,7 @@ import { TestimonialSection } from "../components/section/testimonialSection";
 import { PricingSection } from "../components/section/pricingSection";
 import { ReminderSection } from "../components/section/reminderSection";
 import { Footer } from "../components/footer";
+import { DisclaimerModal } from "../components/modal/disclaimerModal";
 
 // Reusable Intersection Observer wrapper for viewport scroll-triggered animations
 function ScrollAnimate({
@@ -60,7 +61,11 @@ function ScrollAnimate({
   );
 }
 
+let disclaimerAlreadyShown = false;
+
 export default function Home() {
+  const [showDisclaimer, setShowDisclaimer] = useState(!disclaimerAlreadyShown);
+
   return (
     <div className="flex min-h-screen flex-col bg-[#F6F6F6]">
       {/* Brand Navigation: Sticky, blurred glassmorphic header container */}
@@ -100,6 +105,15 @@ export default function Home() {
       <ScrollAnimate animationClass="animate-fade-in-up">
         <Footer />
       </ScrollAnimate>
+
+      {showDisclaimer && (
+        <DisclaimerModal
+          onClose={() => {
+            disclaimerAlreadyShown = true;
+            setShowDisclaimer(false);
+          }}
+        />
+      )}
     </div>
   );
 }

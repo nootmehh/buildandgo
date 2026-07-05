@@ -26,6 +26,8 @@ export function AddProjectModal({ onClose, onAddProject }: AddProjectModalProps)
   const [name, setName] = useState('');
   const [client, setClient] = useState('');
   const [address, setAddress] = useState('');
+  const [projectType, setProjectType] = useState('Home Renovation');
+  const [targetMargin, setTargetMargin] = useState('');
   const [budget, setBudget] = useState('');
   const [manager, setManager] = useState('');
   const [startDate, setStartDate] = useState('');
@@ -136,6 +138,35 @@ export function AddProjectModal({ onClose, onAddProject }: AddProjectModalProps)
             </div>
           </div>
 
+          {/* Row: Project Type & Project Manager */}
+          <div className="self-stretch inline-flex justify-start items-start gap-4">
+            <div className="flex-1 flex flex-col justify-start items-start gap-1">
+              <span className="text-black text-sm font-semibold font-bricolage">Project Type*</span>
+              <Dropdown
+                variant="gray"
+                placeholder="Select Project Type"
+                options={['Home Renovation', 'New Constructions']}
+                value={projectType}
+                onChange={(val) => setProjectType(val)}
+                containerClassName="w-full"
+                className="w-full"
+              />
+            </div>
+
+            <div className="flex-1 flex flex-col justify-start items-start gap-1">
+              <span className="text-black text-sm font-semibold font-bricolage">Project Manager*</span>
+              <Dropdown
+                variant="gray"
+                placeholder="Pick a Project Manager"
+                options={['John Doe', 'Jane Smith', 'Tora Tyson', 'Alex Rivera']}
+                value={manager}
+                onChange={(val) => setManager(val)}
+                containerClassName="w-full"
+                className="w-full"
+              />
+            </div>
+          </div>
+
           {/* Site Address */}
           <div className="self-stretch flex flex-col justify-start items-start gap-1">
             <span className="text-black text-sm font-semibold font-bricolage">Site Address</span>
@@ -151,7 +182,7 @@ export function AddProjectModal({ onClose, onAddProject }: AddProjectModalProps)
 
           <div className="self-stretch h-px bg-white80"></div>
 
-          {/* Row 2: Total Budget & Project Manager */}
+          {/* Row 2: Total Budget & Target Margin */}
           <div className="self-stretch inline-flex justify-start items-start gap-4">
             <div className="flex-1 flex flex-col justify-start items-start gap-1">
               <span className="text-black text-sm font-semibold font-bricolage">Total Budget (USD)*</span>
@@ -167,13 +198,13 @@ export function AddProjectModal({ onClose, onAddProject }: AddProjectModalProps)
             </div>
 
             <div className="flex-1 flex flex-col justify-start items-start gap-1">
-              <span className="text-black text-sm font-semibold font-bricolage">Project Manager*</span>
-              <Dropdown
+              <span className="text-black text-sm font-semibold font-bricolage">Target Margin (%)</span>
+              <InputBox
                 variant="gray"
-                placeholder="Pick a Project Manager"
-                options={['John Doe', 'Jane Smith', 'Tora Tyson', 'Alex Rivera']}
-                value={manager}
-                onChange={(val) => setManager(val)}
+                placeholder="e.g. 20"
+                type="number"
+                value={targetMargin}
+                onChange={(e) => setTargetMargin(e.target.value)}
                 containerClassName="w-full"
                 className="w-full"
               />

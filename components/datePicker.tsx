@@ -138,7 +138,7 @@ export function DatePicker({
   return (
     <div ref={containerRef} className={`w-48 relative inline-flex flex-col justify-start items-start gap-1 select-none ${containerClassName}`}>
       {label && (
-        <span className="self-stretch justify-start text-black text-sm font-normal font-sans">
+        <span className="self-stretch justify-start text-black text-sm font-semibold font-bricolage">
           {label}
         </span>
       )}

@@ -41,10 +41,11 @@ buildandgo_web/
 │   ├── reports/          # Financial summaries and export actions
 │   ├── login/            # Split-screen Auth portal
 │   ├── layout.tsx        # Global page layouts, metadata, and fonts
-│   └── globals.css       # Custom utility rules and Tailwind layer theme variables
+│   ├── globals.css       # Custom utility rules and Tailwind layer theme variables
+│   └── not-found.tsx     # Custom 404 page styled like MobileBlocker
 ├── components/           # Reusable Design System Components
 │   ├── ui/               # Lower-level layout blocks (grid backgrounds, overlays)
-│   ├── modal/            # Details drawer and global search modals
+│   ├── modal/            # Details drawer, search, and disclaimer modals
 │   ├── button.tsx        # Custom variant buttons with state hover selectors
 │   ├── badge.tsx         # Status pill badges
 │   ├── dropdown.tsx      # Combobox select menus

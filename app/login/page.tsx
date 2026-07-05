@@ -45,6 +45,8 @@ export default function LoginPage() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [key, setKey] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('tora@buildandgo.com');
+  const [password, setPassword] = useState('test123');
 
   // Auto-scroll slides every 5 seconds
   useEffect(() => {
@@ -155,6 +157,8 @@ export default function LoginPage() {
                 variant="gray"
                 placeholder="your@mail.com"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 containerClassName="w-full"
                 className="w-full"
               />
@@ -168,6 +172,8 @@ export default function LoginPage() {
                   variant="gray"
                   placeholder="Fill your password"
                   type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   rightIcon="https://cdn.lordicon.com/oxmjavzr.json"
                   iconTrigger="click"
                   iconColor="primary:#110d31"
