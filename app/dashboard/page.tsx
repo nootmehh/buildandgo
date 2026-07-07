@@ -337,8 +337,12 @@ export default function DashboardPage() {
               <div className="flex-1 h-px bg-neutral-100"></div>
             </div>
 
+            {/* Ambient fade-out overlays for scrollable chart area */}
+            <div className="absolute left-[80px] top-0 bottom-[10px] w-8 bg-linear-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-[24px] top-0 bottom-[10px] w-8 bg-linear-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
             {/* Columns layout */}
-            <div className="left-[80px] right-[24px] top-0 absolute h-[calc(100%-10px)] overflow-x-auto pr-2">
+            <div className="left-[80px] right-[24px] top-0 absolute h-[calc(100%-10px)] overflow-x-auto pr-2 scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <div className="inline-flex justify-between items-end h-full min-w-[612px] w-full gap-3 pb-1 pt-10">
                 {(selectedYear === '2026'
                   ? [
